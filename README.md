@@ -16,23 +16,23 @@ MM-XII Software Requirements Specification (SRS)
 
 1.	Introduction
 
-1.1.	PROJECT DESCRIPTION
+  1.1.	PROJECT DESCRIPTION
 
-1.2.	EXTERNAL STANDARDS
+  1.2.	EXTERNAL STANDARDS
 
-•	Interface used to program and debug the microcontroller.
+    •	Interface used to program and debug the microcontroller.
 
-•	Interface used to connect the onboard power source to components.
+    •	Interface used to connect the onboard power source to components.
 
-•	Interface to replenish onboard power source prior to use.
+    •	Interface to replenish onboard power source prior to use.
 
-1.3.	REFERENCED DOCUMENTS
+  1.3.	REFERENCED DOCUMENTS
 
-•	The IEEE Micromouse 2019 competition rules (https://site.ieee.org/r1/files/2019/01/2019-R1-Micromouse-Guideline.pdf)
+    •	The IEEE Micromouse 2019 competition rules (https://site.ieee.org/r1/files/2019/01/2019-R1-Micromouse-Guideline.pdf)
 
-1.4.	OVERVIEW OF DOCUMENT
+  1.4.	OVERVIEW OF DOCUMENT
 
-The requirements laid out in this document depend heavily on the IEEE competition rules and requirements. Functional, design, and performance-based requirements are all designed in order to optimize speed and reduce overall run-time while solving the maze.
+    The requirements laid out in this document depend heavily on the IEEE competition rules and requirements. Functional, design, and performance-based requirements are all designed in order to optimize speed and reduce overall run-time while solving the maze.
 
 2.	 System Requirements
 

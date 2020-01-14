@@ -3,15 +3,10 @@
 Micro Mouse Code - Competition 2020
 
 MEMO Number:  MM-XII- Software Requirements Specifications (SRS)
-
 DATE: 01-JAN-2019
-
 TO:  Dr. EFC LaBerge
-
 FROM:  Zachary Kempler, Richard Ensor, Shahbaz Khan, Faber Alarcon
-
 SUBJECT:  MM-XII Software Requirements Specifications (SRS)
-
 MM-XII Software Requirements Specification (SRS)
 
 1.	Introduction

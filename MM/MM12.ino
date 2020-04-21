@@ -7,11 +7,12 @@
 
 #define ENCODER_TICKS 1000
 #define WHEEL_DIAM 2.32
-#define DRIVE_MAX_PWR 210
+#define DRIVE_MAX_PWR 200
 
 #define sgn(x) ((x) < 0 ? -1 : ((x) > 0 ? 1 : 0))
+#define maximum(x,y) (x > y ? x : y > x ? y : x )
 
-Encoder RM_Enc(3, 2); //right motor
+Encoder RM_Enc(3, 2); //right motor0
 Encoder LM_Enc(6, 7); //left motor
 
 LSM9DS1 imu; //gyro object
@@ -315,7 +316,7 @@ void driveDistance_parallel(float dist) //uses side walls to keep driving straig
   while ((abs(drive_error) > DRIVE_ERROR_THRESH)) // while more than DRIVE_ERROR_THRESH from target
   {
     stop_dist = front_distance();
-    if(stop_dist < 18 || Debug_state)
+    if(stop_dist < 300 || Debug_state)
     {
       turnMotorsoff();
       delay(10);
@@ -329,8 +330,22 @@ void driveDistance_parallel(float dist) //uses side walls to keep driving straig
 
     left_dist = L90_distance();
     right_dist = R90_distance();
-    parallel_error = left_dist-right_dist;
-    
+    if(left_dist < 8 && right_dist < 8) {
+      parallel_error = left_dist-right_dist;
+      WALL_THRESH = .9;
+    }
+    else if(left_dist < 8 && right_dist >= 8){
+       parallel_error = left_dist - 2.5;
+       WALL_THRESH = 1.8;
+    }
+    else if(left_dist >= 8 && right_dist < 8){
+      parallel_error = 2.5 - right_dist;
+      WALL_THRESH = 1.8;
+    }
+    else {
+      parallel_error = abs(abs(LM_Enc.read()) - abs(RM_Enc.read()));
+      WALL_THRESH = .9;
+    }
     // drive straight power modifier
     int rDiff;
     int rMod;

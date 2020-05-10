@@ -349,7 +349,7 @@ void turn_Left(int speed, float deg)
   float timer = millis();
   float degree = 0;
 
-  while (degree < (deg-5)  && !(Debug_state)) 
+  while (degree < (deg-3)  && !(Debug_state)) 
   {
     float delta_time = (millis() - timer) / 1000;
     timer = millis();
@@ -368,7 +368,7 @@ void turn_Right(int speed, float deg)
   float timer = millis();
   float degree = 0;
 
-  while (degree > (-deg+19)  && !(Debug_state)) 
+  while (degree > (-deg+13)  && !(Debug_state)) 
   {
     float delta_time = (millis() - timer) / 1000;
     timer = millis();
@@ -753,8 +753,8 @@ void loop() {
         break;
       }
       if(front_distance() < 20) driveDistance_parallel(36);
-      else driveDistance_parallel(18.5);
-      //delay(1000);
+      else driveDistance_parallel(20);
+      //delay(1000); 
       delay(2);
    }
    else {

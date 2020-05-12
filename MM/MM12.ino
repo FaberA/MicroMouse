@@ -65,7 +65,6 @@ typedef struct Node {
     int x; 
     int y; 
     int weight;
-    bool traversed;
     bool visited;  
     bool W_D; 
     bool W_U; 
